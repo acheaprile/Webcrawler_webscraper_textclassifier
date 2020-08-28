@@ -8,6 +8,10 @@ The aim of this project was both to create an effective but simple tool to itera
 
 The project is divided in three independent but connected parts:
 
-- Web crawler (maincrwl.py)
-- Web scraper (geturltext.py)
-- Classifier (modeltrainingsvm.py / modeltrainingdelta.py and classifier.py)
+- Web crawler (*maincrwl.py*):
+- Web scraper (*geturltext.py*)
+- Classifier (*modeltrainingsvm.py* / *modeltrainingdelta.py* and *classifier.py*)
+
+Here is a diagram of the projects workflow:
+
+![alt text](https://i.ibb.co/7bYPKbk/cl.png)
