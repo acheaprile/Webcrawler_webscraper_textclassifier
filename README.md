@@ -1,1 +1,1 @@
-# Web Crawler-Scrapper and Text Classifier
+# Web Crawler-Scraper and Text Classifier
