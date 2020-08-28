@@ -16,7 +16,7 @@ def vectorizer():
     trainingdata=pd.read_csv("trainingdata.csv", engine='python')
     trainingtexts=[str(i) for i in trainingdata["text"]]
     categories=[str(i) for i in trainingdata["category"]]
-        #New data to classify (we used the texts extracted with the scrapper)
+        #New data to classify (we used the texts extracted with the scraper)
     inputtexts=pd.read_excel("urltexts.xlsx", encoding='utf-8-sig')
     texttoclass=[i for i in inputtexts["text"]]
     urltoclass=[i for i in inputtexts["url"]]
@@ -25,7 +25,7 @@ def vectorizer():
     delta = DeltaTfidfVectorizer(stop_words=stopwords.words("english"))
         #Vectorizing training data
     tfidf=delta.fit_transform(trainingtexts,categories)
-        #Vectorizing new data from the scrapper to predict
+        #Vectorizing new data from the scraper to predict
     tfidf1=delta.transform(texttoclass)
     return(tfidf,tfidf1, categories,urltoclass,texttoclass)
     
