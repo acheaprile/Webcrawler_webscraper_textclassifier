@@ -10,13 +10,13 @@ Here is a diagram of the project's workflow:
 
 ## Project structure
 
-The project is divided in three independent but connected parts:
+The project is divided in three independent but connected parts, which must be executed in the following order:
 
-- **Web crawler (*maincrwl.py*):** This part intends to extract (if allowed by the robots.txt file) all the links contained within a domain by iteratively navigating through all the subdomain levels and storing their link until no new links can be added to the set.
+1. **Web crawler (*maincrwl.py*):** This part intends to extract (if allowed by the robots.txt file) all the links contained within a domain by iteratively navigating through all the subdomain levels and storing their link until no new links can be added to the set.
 
-- **Web scraper (*geturltext.py*):** It aims to extract all the text documents contained within each one of the links crawled previously.
+2. **Web scraper (*geturltext.py*):** It aims to extract all the text documents contained within each one of the links crawled previously.
 
-- **Classifier (*modeltrainingsvm.py* / *modeltrainingdelta.py* and *classifier.py*):** The classifier will learn the classification parameters from the training data and classify the new data pulled by the web scraper into the learnt categories. The text vectorizing is carried out using frequency based methods such as tf-idf or [Delta tf-idf](https://mdsoar.org/handle/11603/12056).
+3. **Classifier (*modeltrainingsvm.py* / *modeltrainingdelta.py* and *classifier.py*):** The classifier will learn the classification parameters from the training data and classify the new data pulled by the web scraper into the learnt categories. The text vectorizing is carried out using frequency based methods such as tf-idf or [Delta tf-idf](https://mdsoar.org/handle/11603/12056).
 
 ## Training Data
 
@@ -35,3 +35,8 @@ The following Python libraries were used in this project:
 - Rake Nltk
 - Sklearn
 - Matplotlib
+
+## Contact
+
+Please, contact me on my email danielgarciache@gmail.com for any suggestion or question!
+Thank you for visiting my GitHub! :)
