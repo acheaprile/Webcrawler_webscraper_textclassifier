@@ -16,14 +16,16 @@ def vectorizer():
     trainingdata=pd.read_csv("trainingdata.csv", engine='python')
     trainingtexts=[str(i) for i in trainingdata["text"]]
     categories=[str(i) for i in trainingdata["category"]]
-        #Data to classify
+        #New data to classify (we used the texts extracted with the scrapper)
     inputtexts=pd.read_excel("urltexts.xlsx", encoding='utf-8-sig')
     texttoclass=[i for i in inputtexts["text"]]
     urltoclass=[i for i in inputtexts["url"]]
 
     #Vectorizing and appliying delta-tfidf on all the documents
     delta = DeltaTfidfVectorizer(stop_words=stopwords.words("english"))
+        #Vectorizing training data
     tfidf=delta.fit_transform(trainingtexts,categories)
+        #Vectorizing new data from the scrapper to predict
     tfidf1=delta.transform(texttoclass)
     return(tfidf,tfidf1, categories,urltoclass,texttoclass)
     
@@ -37,6 +39,7 @@ def modeltraining(data,labels,trsize):
     
     #Testing the classifier
     y_pred=mod.predict(X_test)
+    #We print the performance report and metrics of the model
     print(confusion_matrix(y_test, y_pred))
     skplt.metrics.plot_confusion_matrix(y_test, y_pred, normalize=True)
     plt.show()
